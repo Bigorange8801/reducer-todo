@@ -1,13 +1,13 @@
 import React, { useReducer } from 'react';
-import{ initialState, reducer } from './reducer';
 import './App.css';
 
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import {todoReducer, initialState} from './reducer/Reducer';
 
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(todoReducer, initialState);
   console.log('state', state);
 
   const addTodo = item => {
@@ -26,6 +26,7 @@ function App() {
     <div className="App">
       <TodoList todoArray={state.todoArray} toggleTodo={toggleTodo} />
       <TodoForm addTodo={addTodo} clearCompleted={clearCompleted} />
+      
     </div>
   );
 }

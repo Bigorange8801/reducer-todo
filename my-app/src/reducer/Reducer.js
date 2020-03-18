@@ -9,7 +9,7 @@ export const initialState = {
     // todoInput: ""
   };
   
-  export function reducer(state, action) {
+  export function todoReducer(state, action) {
     console.log('action', action);
     switch (action.type) {
     case "ADD_TODO":
@@ -45,3 +45,5 @@ export const initialState = {
       return state;
     }
   }
+
+  export default todoReducer;
